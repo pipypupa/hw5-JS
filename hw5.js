@@ -27,7 +27,7 @@ switch (dayWeek) {
   case "понеділок":
   case "вівторок":
   case "середа":
-  case "четвер":
+  case "четверг":
   case "п'ятниця":
     alert("Цей день є робочим днем");
     break;
