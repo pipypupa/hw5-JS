@@ -1,111 +1,195 @@
-// Показати повідомлення про вибір напою Завдання 1
-function showDrinkMessage() {
-  const drink = document.getElementById("drinkSelect").value;
-  const message = drink ? `Ви обрали ${drink}.` : "";
-  document.getElementById("drinkMessage").textContent = message;
+let select = prompt(
+  "Зробіть ваше замовлення із запропонованих вам напоїв: Кава, Чай, Сік"
+).toLowerCase();
+
+switch (select) {
+  case "кава":
+    alert(
+      "Дякуємо за замовлення, вашу каву вже роблять, зачекайте пару хвилин"
+    );
+    break;
+
+  case "чай":
+    alert("Дякуємо за замовлення, ваш чай вже роблять, зачекайте пару хвилин");
+    break;
+
+  case "сік":
+    alert("Дякуємо за замовлення, ваш сік зараз принесуть");
+    break;
+
+  default:
+    alert("Виберіть один із запропонованих напоїв: Кава, Чай, Сік");
 }
 
-// Перевірка на робочий або вихідний день Завданння 2
-function checkDay() {
-  const day = document.getElementById("dayInput").value.toLowerCase();
-  const workingDays = ["понеділок", "вівторок", "середа", "четвер", "п'ятниця"];
-  const weekendDays = ["субота", "неділя"];
-  let result;
+const dayWeek = prompt("Введіть день тижня").toLowerCase();
 
-  if (workingDays.includes(day)) {
-    result = "Це робочий день.";
-  } else if (weekendDays.includes(day)) {
-    result = "Це вихідний день.";
-  } else {
-    result = "Введіть коректний день тижня.";
-  }
+switch (dayWeek) {
+  case "понеділок":
+  case "вівторок":
+  case "середа":
+  case "четвер":
+  case "п'ятниця":
+    alert("Цей день є робочим днем");
+    break;
 
-  document.getElementById("dayCheckResult").textContent = result;
+  case "субота":
+  case "неділя":
+    alert("Цей день є вихідним днем");
+    break;
+
+  default:
+    alert("Введено некоректний день тижня");
 }
 
-// Перевірка пори року за номером місяця Завдання 3
-function checkSeason() {
-  const month = parseInt(document.getElementById("monthInput").value);
-  let season;
+const month = Number(prompt("Введіть число місяця"));
+switch (month) {
+  case 1:
+    alert("Зима, Січень");
+    break;
 
-  if (month >= 3 && month <= 5) {
-    season = "Весна";
-  } else if (month >= 6 && month <= 8) {
-    season = "Літо";
-  } else if (month >= 9 && month <= 11) {
-    season = "Осінь";
-  } else if (month === 12 || month === 1 || month === 2) {
-    season = "Зима";
-  } else {
-    season = "Введіть коректний номер місяця.";
-  }
+  case 2:
+    alert("Зима, Лютий");
+    break;
 
-  document.getElementById("seasonCheckResult").textContent = season;
+  case 3:
+    alert("Весна, Березень");
+    break;
+
+  case 4:
+    alert("Весна, Квітень");
+    break;
+
+  case 5:
+    alert("Весна, Травень");
+    break;
+
+  case 6:
+    alert("Літо, Червень");
+    break;
+
+  case 7:
+    alert("Літо, Липень");
+    break;
+
+  case 8:
+    alert("Літо, Серпень");
+    break;
+
+  case 9:
+    alert("Осінь, Вересень");
+    break;
+
+  case 10:
+    alert("Осінь, Жовтень");
+    break;
+
+  case 11:
+    alert("Осінь, Листопад");
+    break;
+
+  case 12:
+    alert("Зима, Грудень");
+    break;
+
+  default:
+    alert("Такого місяця не існує");
 }
 
-// Перевірка кількості днів у місяці Завдання 4
-function checkDaysInMonth() {
-  const month = parseInt(document.getElementById("daysInMonthInput").value);
-  let days;
+const dayMonth = prompt("Введіть назву місяця").toLowerCase();
 
-  if (month === 2) {
-    days = "28 або 29 днів";
-  } else if ([4, 6, 9, 11].includes(month)) {
-    days = "30 днів";
-  } else if ([1, 3, 5, 7, 8, 10, 12].includes(month)) {
-    days = "31 день";
-  } else {
-    days = "Введіть коректний номер місяця.";
-  }
+switch (dayMonth) {
+  case "вересень":
+    alert("У цьому місяці 30 днів");
+    break;
 
-  document.getElementById("daysInMonthResult").textContent = days;
+  case "жовтень":
+    alert("У цьому місяці 31 день");
+    break;
+
+  case "листопад":
+    alert("У цьому місяці 30 днів");
+    break;
+
+  case "грудень":
+    alert("У цьому місяці 31 день");
+    break;
+
+  case "січень":
+    alert("У цьому місяці 31 день");
+    break;
+
+  case "лютий":
+    alert("У цьому місяці 29 днів");
+    break;
+
+  case "березень":
+    alert("У цьому місяці 31 день");
+    break;
+
+  case "квітень":
+    alert("У цьому місяці 30 днів");
+    break;
+
+  case "травень":
+    alert("У цьому місяці 31 день");
+    break;
+
+  case "червень":
+    alert("У цьому місяці 30 днів");
+    break;
+
+  case "липень":
+    alert("У цьому місяці 31 день");
+    break;
+
+  case "серпень":
+    alert("У цьому місяці 31 день");
+    break;
+
+  default:
+    alert("Такого місяця не існує");
 }
 
-// Дія за кольором Завдання 5
-function checkColorAction() {
-  const color = document.getElementById("colorInput").value.toLowerCase();
-  let action;
+const color = prompt("Введіть назву кольору світлофора").toLowerCase();
 
-  if (color === "червоний") {
-    action = "Стоп";
-  } else if (color === "зелений") {
-    action = "Йти";
-  } else if (color === "жовтий") {
-    action = "Чекати";
-  } else {
-    action = "Невідомий колір";
-  }
+switch (color) {
+  case "червоний":
+    alert("Рух заборонено!");
+    break;
 
-  document.getElementById("colorActionResult").textContent = action;
+  case "жовтий":
+    alert("Приготуйтесь");
+    break;
+
+  case "зелений":
+    alert("Рух дозволено");
+    break;
+
+  default:
+    alert("Error");
 }
 
-// Калькулятор з вибором операції Завдання 6
-function calculate() {
-  const num1 = parseFloat(document.getElementById("num1").value);
-  const num2 = parseFloat(document.getElementById("num2").value);
-  const operation = document.getElementById("operation").value;
-  let result;
+const firstNumber = parseFloat(prompt("Введіть перше число"));
+const secondNumber = parseFloat(prompt("Введіть друге число"));
+const operation = prompt("Виберіть знак: + - * / ");
+switch (operation) {
+  case "+":
+    alert(firstNumber + secondNumber);
+    break;
 
-  if (isNaN(num1) || isNaN(num2)) {
-    result = "Будь ласка, введіть обидва числа.";
-  } else {
-    switch (operation) {
-      case "+":
-        result = num1 + num2;
-        break;
-      case "-":
-        result = num1 - num2;
-        break;
-      case "*":
-        result = num1 * num2;
-        break;
-      case "/":
-        result = num2 !== 0 ? num1 / num2 : "Помилка: ділення на нуль!";
-        break;
-      default:
-        result = "Невідома операція";
-    }
-  }
+  case "-":
+    alert(firstNumber - secondNumber);
+    break;
 
-  document.getElementById("calcResult").textContent = `Результат: ${result}`;
+  case "*":
+    alert(firstNumber * secondNumber);
+    break;
+
+  case "/":
+    alert("Ділити на нуль неможливо");
+    alert(firstNumber / secondNumber);
+    break;
+
+  default:
+    alert("Операцію не виконано");
 }
